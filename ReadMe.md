@@ -1,6 +1,9 @@
 ### Nyx Development shops
 This is a elevator script completely made by Nyx-Development and it is licensed over MIT so any one trying to resell this will get a DMCA notice. this is only a Beta version if you want to get the compelete version join the discord below
-https://discord.gg/RCrQZayqAs
+
+
+1. Discord : https://discord.gg/RCrQZayqAs
+2. YouTube : https://youtu.be/-M3mpQ1BW6g
 
 
 # Depedency
