@@ -1,3 +1,4 @@
+
 local QBCore = exports['qb-core']:GetCoreObject()
 local interactions = {}
 -- opens the ui
@@ -32,7 +33,7 @@ local function UseElevator(data)
             TriggerServerEvent("InteractSound_SV:PlayOnSource", Config.Elevators[data.lift].Sound, 0.05)
         end
         SetEntityCoords(ped, data.floor.Coords.x, data.floor.Coords.y, data.floor.Coords.z, 0, 0, 0, false)
-        SetEntityHeading(ped, data.floor.ExitHeading)
+        SetEntityHeading(ped, data.floor.Coords.w)
         Wait(1000)
         DoScreenFadeIn(600)
         
@@ -61,10 +62,12 @@ end
 -- creats eye  targets from config
 CreateThread(function()
     for k, v in pairs(Config.Elevator) do
-        local coords = vector3(v.location.x, v.location.y, v.location.z)
-        AddInteraction(k, coords)
+        for _, location in ipairs(v.locations) do
+            AddInteraction(v.name, location)
+        end
     end
 end)
+
 
 
 
@@ -74,16 +77,18 @@ function NearestElevator()
     
     local nearestElevator = nil
     local nearestDistance = math.huge
-    
+
     for _, elevator in pairs(Config.Elevator) do 
-        local distance = Vdist(playerCoords, elevator.location)
-        
-        if distance < nearestDistance then
-            nearestElevator = elevator
-            nearestDistance = distance
+        for _, location in ipairs(elevator.locations) do
+            local distance = Vdist(playerCoords, location)
+            
+            if distance < nearestDistance then
+                nearestElevator = elevator
+                nearestDistance = distance
+            end
         end
     end
-    
+
     return nearestElevator, nearestDistance
 end
 
