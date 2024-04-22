@@ -1,5 +1,12 @@
-### Nyx Development shops
+### Nyx Development Elevator 1.1.0
 This is a elevator script completely made by Nyx-Development and it is licensed over MIT so any one trying to resell this will get a DMCA notice. this is only a Beta version if you want to get the compelete version join the discord below
+
+
+# Update
+now you can have more than one location for your single elevator 
+removed unnecessary lines in fxmanifest.lua
+changed the floor config from vector3 to vector4 
+added necessary information in config.lua for the new config
 
 
 1. Discord : https://discord.gg/RCrQZayqAs
