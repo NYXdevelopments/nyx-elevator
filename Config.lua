@@ -32,7 +32,7 @@ Config.Elevator = {
             },
         }
     },
-    [1] = {
+    [2] = {
         Sound = "LiftSoundBellRing",
         name = "elevator_2", -- it should be different for each elevator you make
         locations = {
